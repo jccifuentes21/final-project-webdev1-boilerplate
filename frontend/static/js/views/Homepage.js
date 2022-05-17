@@ -12,12 +12,10 @@ export default class extends AbstractView{
         // const section = document.createElement("section")
         
         return `
-            <section id=header>
-                <div id="header">
+                <nav id="headerHP">
                     <h1>Where in the world?</h1>
                     <button id="mode">Dark Mode</button>
-                </div>
-            </section>
+                </nav>
 
             <section id=homepage>
                 <div id="backgroundImage">
@@ -28,7 +26,7 @@ export default class extends AbstractView{
                 </div>
             </section>
 
-            <section id="footer">
+            <section id="footerHP">
                 <h3>Final project of CICCC students</h3>
             </section>
 
