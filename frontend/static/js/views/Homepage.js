@@ -1,5 +1,6 @@
 import AbstractView from "./AbstractView.js";
 
+
 export default class extends AbstractView{
     constructor(params) {
         super(params);
@@ -14,15 +15,15 @@ export default class extends AbstractView{
             <section id=header>
                 <div id="header">
                     <h1>Where in the world?</h1>
-                    <button class="mode">Dark Mode</button>
+                    <button id="mode">Dark Mode</button>
                 </div>
             </section>
 
             <section id=homepage>
-                <div id="background_image">
-                    <div id=rectangle>
+                <div id="backgroundImage">
+                    <div id=rectangle></div>
                         <div id=country></div>
-                    </div>
+                </div>
                     <button id="explore">Explore</button>    
                 </div>
             </section>
