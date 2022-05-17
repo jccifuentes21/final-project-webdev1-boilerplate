@@ -19,10 +19,12 @@ export default class extends AbstractView{
 
             <section id=homepage>
                 <div id="backgroundImage">
-                    <div id=rectangle></div>
+                    <div id=rectangle>
                         <div id=country></div>
-                </div>
-                    <button id="explore">Explore</button>    
+                    </div>
+                    <div>
+                        <button id="explore">Explore</button>    
+                    </div>
                 </div>
             </section>
 
