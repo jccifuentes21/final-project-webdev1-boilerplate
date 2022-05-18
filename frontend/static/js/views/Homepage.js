@@ -21,9 +21,7 @@ export default class extends AbstractView{
                     <div id=rectangle>
                         <div id=country></div>
                     </div>
-                    <div>
-                        <button id="explore">Explore</button>    
-                    </div>
+                    <button id="explore">Explore</button>    
                 </div>
             </section>
 
@@ -33,12 +31,6 @@ export default class extends AbstractView{
 
 
             
-        
-        
-        
-        
-        
-        
         
         
         `;

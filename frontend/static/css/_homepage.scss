@@ -31,31 +31,25 @@
 }
 
 #rectangle {
-    height: 500px;
-    width: 350px;
+    height: 600px;
+    width: 450px;
     background-color: rgba(255, 255, 255, 0.41);
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.07);
     margin:50px;
 }
 
 #explore {
-    margin: 50px;
-    font-size: 15px;
-    color: black;
-    background-color: white;
+    font-size: 17.5px;
     border-radius: 5px;
-    line-height: 1.7em;
+    line-height: 2em;
     padding: 0.3em 1em;
-    font-weight: bold;
     text-transform: uppercase;
     display: inline-block;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.07);
     &:hover {
       cursor: pointer;
-      border: none;
-    //   background-color: $dark_yellowgr_color;
-    //   color: $red_color;
+      border: 2px solid white;
       transition: 300ms ease 0ms;
-    
     }
 }
 
