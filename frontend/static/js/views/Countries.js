@@ -1,4 +1,5 @@
 import AbstractView from "./AbstractView.js";
+import { countryArr } from "../index.js";
 
 export default class extends AbstractView {
   constructor(params) {
@@ -8,21 +9,24 @@ export default class extends AbstractView {
 
   async getHTML() {
     const cards1 = document.createElement("div");
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 0; i <= countryArr.length - 1; i++) {
       const card = document.createElement("div");
+      const country = countryArr[i];
+      console.log(country.flagURL);
       card.innerHTML = `
     <div class="countries-part-cards">
-     <div class="countries-img"></div>
+     <img src="${countryArr[i].flagURL}">
      <div class="countries-information-part">
-      <h2>Name</h2>
-      <p>Population:</p>
-      <p>Region:</p>
-      <p>Capital:</p>
+      <h2>${country.name}</h2>
+      <p>Population: ${country.population}</p>
+      <p>Region: ${country.region}</p>
+      <p>Capital: ${country.capital}</p>
      </div>
     </div>
       `;
       cards1.appendChild(card);
     }
+
     return `
     <section class="countries-home">
     <div class="searching-part">
