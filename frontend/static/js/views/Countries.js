@@ -35,7 +35,7 @@ export default class extends AbstractView {
     <input type="text" name="searching" placeholder="Search for a country..." class="searching-part-inpt" style="border:none">
     </form>
     <select class="searching-part-slc">
-    <option class="searching-part-slc-op">Filter by Region</option>
+    <option class="searching-part-slc-op" disabled selected hidden>Filter by Region</option>
     <option class="searching-part-slc-op">Africa</option>
     <option class="searching-part-slc-op">America</option>
     <option class="searching-part-slc-op">Asia</option>

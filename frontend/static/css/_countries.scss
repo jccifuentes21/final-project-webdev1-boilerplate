@@ -2,6 +2,9 @@
 * {
     margin: 0%;
     color: #ffffff;
+}
+
+body {
     background-color: #202c37;
 }
 
@@ -50,20 +53,21 @@ nav {
             display: flex;
             justify-content: space-between;
             width: 100%;
-            margin: 0% 0% 3% 0%;
+            margin: 3% 0%;
             .searching-part-form{
                 position: relative;
                 width: 48%;
+                height: 3em;
                 margin: 0% 0% 0% 5%;
                 .searching-part-icon {
                     position: absolute;
-                    top: 40%;
+                    top: 30%;
                     left: 5%;
                 }
                 .searching-part-inpt {
                     margin: 0%;
                     padding: 0% 0% 0% 10%;
-                    height: 3em;
+                    height: 100%;
                 }
             }
             .searching-part-slc{
@@ -90,8 +94,15 @@ nav {
         .countries-information-part {
             background-color: #2b3945;
             height: 55%;
+            padding: 0% 10%;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
+            h2 {
+                padding: 10% 0%;
+            }
+            p {
+                padding-bottom: 5%;
+            }
         }
     }
 }
@@ -113,10 +124,16 @@ nav {
                 background-color: #0000ff;
             }
             .countries-information-part {
-                background-color: #ffffff;
                 height: 55%;
+                padding: 0% 10%;
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
+                h2 {
+                    padding: 10% 0%;
+                }
+                p {
+                    padding-bottom: 3%;
+                }
             }
         }
     }
