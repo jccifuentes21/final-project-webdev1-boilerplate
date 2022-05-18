@@ -1,6 +1,7 @@
-import {getCountries} from './countries.js'
+import { getCountries } from "./countries.js";
 
 const countries = getCountries();
+
 
 let countryObject = []
 
@@ -51,3 +52,4 @@ countries.map(country => {
 })
 
 console.log(countryArr);
+

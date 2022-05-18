@@ -26,7 +26,12 @@ export default class extends AbstractView {
     return `
     <section class="countries-home">
     <div class="searching-part">
-    <form>
+    <form class="searching-part-form">
+    <span
+            class="iconify searching-part-icon"
+            data-icon="ant-design:search-outlined"
+            style="color: #ccc; font-size: 17px"
+          ></span>
     <input type="text" name="searching" placeholder="Search for a country..." class="searching-part-inpt" style="border:none">
     </form>
     <select class="searching-part-slc">
