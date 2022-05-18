@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+#nameHP {
+  font-size: 24px;
+}
+
 #headerHP {
   display: flex;
   align-items: center;
