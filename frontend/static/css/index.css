@@ -23,16 +23,28 @@
   justify-content: space-evenly;
   align-items: center;
 }
+@media screen and (max-width: 600px) {
+  #backgroundImage {
+    flex-direction: column;
+  }
+}
 
 #rectangle {
   height: 600px;
   width: 450px;
   background-color: rgba(255, 255, 255, 0.563);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07);
-  margin: 50px;
+  margin: 25px;
+}
+@media screen and (max-width: 600px) {
+  #rectangle {
+    height: 70%;
+    width: 70%;
+  }
 }
 
 #explore {
+  margin: 25px;
   font-size: 20px;
   border-radius: 5px;
   line-height: 2em;
@@ -52,6 +64,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 30px 80px;
+  text-align: center;
 }
 
 * {
