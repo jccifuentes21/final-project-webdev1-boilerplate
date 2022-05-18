@@ -39,12 +39,21 @@
     height: 600px;
     width: 450px;
     background-color: rgba(255, 255, 255, 0.563);
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.07);
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.893);
     margin:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media screen and (max-width: 600px) {
         height: 70%;
         width: 70%;
 
+    }
+    #country {
+        display: flex;
+        height: 75%;
+        width: 75%;
+        box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.893);
     }
 }
 
@@ -58,10 +67,11 @@
     display: inline-block;
     border: 2px solid white;
     transition: 300ms ease 0ms;
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.07);
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.893);
     &:hover {
       cursor: pointer;
       border: 2px solid rgba(255, 255, 255, 0);
+      box-shadow:0 2px 6px 0 rgba(255, 255, 255, 0.893);
       transition: 300ms ease 0ms;
     }
 }
