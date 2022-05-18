@@ -30,8 +30,3 @@ export default class extends AbstractView{
         `;
     }
 }
-
-function exploreBtn () {
-
-        
-}
