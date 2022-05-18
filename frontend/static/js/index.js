@@ -1,4 +1,4 @@
-import {getCountries} from './countries.js'
+import { getCountries } from "./countries.js";
 
 const countries = getCountries();
 
@@ -14,5 +14,5 @@ const countries = getCountries();
 //     console.log("the country does not have a capital")
 //   }
 // })
- 
-// console.log(countries);
+
+console.log(countries);
