@@ -1,9 +1,5 @@
 import AbstractView from "./AbstractView.js";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 export default class extends AbstractView{
     constructor(params) {
         super(params);
@@ -39,16 +35,6 @@ export default class extends AbstractView{
             
         
         
-        
-        
-        
-        
-        
-        
         `;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> main
