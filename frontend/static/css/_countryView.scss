@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+body{
+  background-color: #202c37;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 
 
 @media screen and (max-width: 376px) {
@@ -11,8 +16,6 @@
     display: flex;
     width: 100vw;
     flex-direction: column;
-    background-color: #202c37;
-    font-family: 'Nunito Sans', sans-serif;
   }
 
   .header {
@@ -84,6 +87,7 @@
 
     .border-countries {
       display: flex;
+      flex-wrap: wrap;
       margin: 0.5rem 1rem;
 
       .border-country-button {
@@ -91,6 +95,7 @@
         background-color: #2b3945;
         color: white;
         padding: 0.25rem 1.25rem;
+        margin: 0.5rem 0.75rem;
         box-shadow: 0px 0px 10px 0.75px #00000080;
       }
 

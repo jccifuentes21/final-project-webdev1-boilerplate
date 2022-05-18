@@ -6,7 +6,7 @@ const countries = getCountries();
 let countryObject = []
 
 
-const countryArr = [];
+export const countryArr = [];
 
 countries.map(country => {
   countryObject = {
@@ -18,11 +18,13 @@ countries.map(country => {
     subregion: null,
     capital: null,
     domain: null,
-    currencies: [],
-    languages: [],
+    currencies: null,
+    languages: "",
     borderCountries: [],
     flagURL: null
   }
+
+  let languages = "";
 
   countryObject.cca3 = country.cca3;
   countryObject.name = country.name.common;
@@ -30,7 +32,7 @@ countries.map(country => {
   if(country.name.nativeName != null) countryObject.nativeName = (Object.values(country.name.nativeName)[0]).common
   else countryObject.nativeName = "This country does not have a native name"
 
-  countryObject.population = country.population;
+  countryObject.population = country.population.toLocaleString();
   countryObject.region = country.region;
 
   if (country.subregion != null) countryObject.subregion = country.subregion;
@@ -42,8 +44,18 @@ countries.map(country => {
   if(country.tld != null) countryObject.domain = country.tld[0];
   else countryObject.domain = "This country does not have a domain"
 
-  countryObject.currencies = country.currencies
-  countryObject.languages = country.languages
+  if (country.currencies!= null) countryObject.currencies = Object.values(country.currencies)[0].name
+  else countryObject.currencies = "This country does not have a currency"
+
+  if (country.languages != null) languages = Object.values(country.languages)
+  else countryObject.languages = "This country does not have a language"
+  for( let i=0; i<languages.length; i++){
+    countryObject.languages += languages[i]
+    if (i != languages.length-1 ){
+      countryObject.languages += ", "
+    }
+  }
+
   countryObject.borderCountries = country.borders
   countryObject.flagURL = country.flags.png
 
@@ -51,5 +63,6 @@ countries.map(country => {
 
 })
 
-console.log(countryArr);
+
+// console.log(countryArr);
 
