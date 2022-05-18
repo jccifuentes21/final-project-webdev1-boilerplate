@@ -200,4 +200,91 @@ nav {
   .container .countries-part-cards .countries-information-part p {
     padding-bottom: 3%;
   }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 376px) {
+  body {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    background-color: #202c37;
+    font-family: "Nunito Sans", sans-serif;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    padding-left: 1rem;
+    height: 4.5rem;
+    background-color: #2b3945;
+  }
+  .header h1 {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: white;
+  }
+  .header button {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .content .back-button {
+    font-size: 0.85rem;
+    background-color: #2b3945;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    padding: 0.25rem 1.75rem;
+    margin: 2rem 1rem;
+    box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
+  }
+  .content .country-flag {
+    margin: 0.5rem;
+    align-self: center;
+    height: 12rem;
+    width: 80vw;
+  }
+  .content #country-name {
+    font-weight: 800;
+    color: white;
+    margin: 0.5rem 1rem;
+  }
+  .content .placeholder {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.5rem 1rem;
+  }
+  .content .placeholder-content {
+    font-weight: 300;
+  }
+  .content h3 {
+    margin: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+  }
+  .content .border-countries {
+    display: flex;
+    margin: 0.5rem 1rem;
+  }
+  .content .border-countries .border-country-button {
+    text-decoration: none;
+    background-color: #2b3945;
+    color: white;
+    padding: 0.25rem 1.25rem;
+    box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
+  }
 }/*# sourceMappingURL=index.css.map */
