@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+#nameHP {
+  font-size: 24px;
+}
+
 #headerHP {
   display: flex;
   align-items: center;
@@ -14,7 +18,7 @@
 #backgroundImage {
   width: 100%;
   height: 700px;
-  background-image: url(./homepage/canada.jpg);
+  background-image: url(./homepage/czech.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -33,14 +37,23 @@
   height: 600px;
   width: 450px;
   background-color: rgba(255, 255, 255, 0.563);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.893);
   margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (max-width: 600px) {
   #rectangle {
     height: 70%;
     width: 70%;
   }
+}
+#rectangle #country {
+  display: flex;
+  height: 75%;
+  width: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.893);
 }
 
 #explore {
@@ -53,11 +66,12 @@
   display: inline-block;
   border: 2px solid white;
   transition: 300ms ease 0ms;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.893);
 }
 #explore:hover {
   cursor: pointer;
   border: 2px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.893);
   transition: 300ms ease 0ms;
 }
 
@@ -72,6 +86,10 @@
 * {
   margin: 0%;
   color: #ffffff;
+}
+
+body {
+  background-color: #202c37;
 }
 
 nav {
@@ -117,22 +135,23 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 0% 0% 3% 0%;
+    margin: 3% 0%;
   }
   .searching-part .searching-part-form {
     position: relative;
     width: 48%;
+    height: 3em;
     margin: 0% 0% 0% 5%;
   }
   .searching-part .searching-part-form .searching-part-icon {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 5%;
   }
   .searching-part .searching-part-form .searching-part-inpt {
     margin: 0%;
     padding: 0% 0% 0% 10%;
-    height: 3em;
+    height: 100%;
   }
   .searching-part .searching-part-slc {
     width: 15%;
@@ -154,8 +173,15 @@ nav {
 .container .countries-part-cards .countries-information-part {
   background-color: #2b3945;
   height: 55%;
+  padding: 0% 10%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+.container .countries-part-cards .countries-information-part h2 {
+  padding: 10% 0%;
+}
+.container .countries-part-cards .countries-information-part p {
+  padding-bottom: 5%;
 }
 
 @media screen and (min-width: 376px) and (max-width: 1440px) {
@@ -177,10 +203,16 @@ nav {
     background-color: #0000ff;
   }
   .container .countries-part-cards .countries-information-part {
-    background-color: #ffffff;
     height: 55%;
+    padding: 0% 10%;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+  }
+  .container .countries-part-cards .countries-information-part h2 {
+    padding: 10% 0%;
+  }
+  .container .countries-part-cards .countries-information-part p {
+    padding-bottom: 3%;
   }
 }
 * {

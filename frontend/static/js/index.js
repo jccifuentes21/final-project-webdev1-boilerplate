@@ -1,12 +1,37 @@
 import { getCountries } from "./countries.js";
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+
+    const images=[
+        "static/css/homepage/brazil.jpg",
+        "static/css/homepage/canada.jpg",
+        "static/css/homepage/italy.jpg",
+        "static/css/homepage/czech.jpg",
+        "static/css/homepage/france.jpg",
+        "static/css/homepage/germany.jpg",
+        "static/css/homepage/japan.jpg",
+       ]
+
+       let index = 0;
+       const imgElement = document.querySelector('#backgroundImage');
+       
+       function change() {
+          imgElement.style.backgroundImage = `url(${images[index]})`;
+          index > 5 ? index = 0 : index++;
+       }
+       
+       window.onload = function () {
+           setInterval(change, 5000);
+       };
+});
+
 const countries = getCountries();
-
-
 let countryObject = []
 
 
 export const countryArr = [];
+
 
 countries.map(country => {
   countryObject = {
@@ -63,6 +88,6 @@ countries.map(country => {
 
 })
 
-
 // console.log(countryArr);
+
 
