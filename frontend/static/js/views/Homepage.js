@@ -14,10 +14,18 @@ export default class extends AbstractView{
                 <button id="mode">Dark Mode</button>
             </div>
 
-            <section id=homepage>
+            <section id="homepage">
                 <div id="backgroundImage">
-                    <div id=rectangle>
-                        <div id=country></div>
+                    <div id="rectangle">
+                        <div id="country">
+                            <div id="flagContainer">
+                                <img id="flagHP" src="static/css/flag/czech.png"></img>
+                            </div>
+                            <span id="countryNameHP">Czech Republic</span>
+                            <span id="populationHP">Population: 10,698,896</span>
+                            <span id="regionHP">Region: Europe</span>
+                            <span id="capitalHP">Capital: Prague</span>
+                        </div>
                     </div>
                     <button id="explore" onclick="location.href='/countries'">Explore</button>    
                 </div>

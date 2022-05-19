@@ -26,6 +26,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  transition: all 1s;
 }
 @media screen and (max-width: 600px) {
   #backgroundImage {
@@ -51,9 +52,48 @@
 }
 #rectangle #country {
   display: flex;
+  flex-direction: column;
   height: 75%;
   width: 75%;
+  padding: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.893);
+  background-color: white;
+}
+@media screen and (max-width: 600px) {
+  #rectangle #country {
+    height: 70%;
+    width: 70%;
+  }
+}
+#rectangle #country #flagContainer {
+  width: 100%;
+  height: 12rem;
+}
+#rectangle #country #flagHP {
+  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+}
+#rectangle #country #countryNameHP {
+  font-weight: 800;
+  font-size: 35px;
+  color: black;
+  margin-top: 2rem;
+}
+#rectangle #country #populationHP {
+  font-size: 20px;
+  color: black;
+  margin-top: 1rem;
+}
+#rectangle #country #regionHP {
+  font-size: 20px;
+  color: black;
+  margin-top: 1rem;
+}
+#rectangle #country #capitalHP {
+  font-size: 20px;
+  color: black;
+  margin-top: 1rem;
 }
 
 #explore {
@@ -64,7 +104,7 @@
   padding: 10px 30px;
   text-transform: uppercase;
   display: inline-block;
-  border: 2px solid white;
+  border: 2px solid black;
   transition: 300ms ease 0ms;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.893);
 }
