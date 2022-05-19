@@ -12,20 +12,22 @@ export default class extends AbstractView {
     for (let i = 0; i <= countryArr.length - 1; i++) {
       const card = document.createElement("div");
       const country = countryArr[i];
-      console.log(country.flagURL);
+      console.log(countryArr[i]);
+      // console.log(countryArr);
       card.innerHTML = `
+    <a href=/countries/${country.cca3}>Link</a>
     <div class="countries-part-cards">
     <div class="countries-image-parts">
-     <img src="${countryArr[i].flagURL}">
-     </div>
-     <div class="countries-information-part">
-      <h2>${country.name}</h2>
-      <p>Population: ${country.population}</p>
-      <p>Region: ${country.region}</p>
-      <p>Capital: ${country.capital}</p>
-     </div>
+    <img src="${countryArr[i].flagURL}">
     </div>
-      `;
+    <div class="countries-information-part">
+    <h2>${country.name}</h2>
+    <p>Population: ${country.population}</p>
+    <p>Region: ${country.region}</p>
+    <p>Capital: ${country.capital}</p>
+    </div>
+    </div>
+    `;
       cards1.appendChild(card);
     }
 
@@ -33,7 +35,7 @@ export default class extends AbstractView {
     <header>
             <div class="header">
             <h1>Where in the world?</h1>
-            <div class="header-btn" id="dark-light-mode">
+            <div class="header-btn" id="dark-light-mode" data-toggle="dark">
             <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
             <span>Dark Mode</sapn>
             </div>
@@ -64,7 +66,6 @@ export default class extends AbstractView {
     </section>
     `;
   }
-  
 }
 
 // const btn = document.getElementById("dark-light-mode");
@@ -79,4 +80,3 @@ export default class extends AbstractView {
 //     document.body.classList.add("background-light-theme");
 //   }
 // });
-
