@@ -13,7 +13,6 @@ export default class extends AbstractView {
       const card = document.createElement("div");
       const country = countryArr[i];
       const region = countryArr[i].region;
-      console.log(region);
       // console.log(countryArr[i].region);
       card.innerHTML = `
     <a href=/countries/${country.cca3}>Link</a>
@@ -44,13 +43,13 @@ export default class extends AbstractView {
         </header>
     <section class="countries-home">
     <div class="searching-part">
-    <form class="searching-part-form">
+    <form class="searching-part-form" onsubmit="return false;">
     <span
             class="iconify searching-part-icon"
             data-icon="ant-design:search-outlined"
             style="color: #ccc; font-size: 17px"
           ></span>
-    <input type="text" name="searching" placeholder="Search for a country..." class="searching-part-inpt" style="border:none">
+    <input type="text" name="searching" placeholder="Search for a country..." class="searching-part-inpt" id="searching-input" style="border:none">
     </form>
     <select class="searching-part-slc">
     <option class="searching-part-slc-op" disabled selected hidden>Filter by Region</option>
