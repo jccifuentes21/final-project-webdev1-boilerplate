@@ -94,6 +94,28 @@ window.addEventListener("DOMContentLoaded", (event) => {
   window.onload = function () {
     setInterval(change, 5000);
   };
+
+  const btn = document.getElementById("dark-light-mode");
+  console.log(btn);
+
+  btn.addEventListener("click", function () {
+    if (btn.getAttribute("data-toggle") == "dark") {
+      document.body.classList.remove("background-dark-theme");
+      document.body.classList.add("background-light-theme");
+      btn.setAttribute("data-toggle", "light");
+    } else {
+      document.body.classList.remove("background-light-theme");
+      document.body.classList.add("background-dark-theme");
+      btn.setAttribute("data-toggle", "dark");
+    }
+  });
+
+  const jump = document.getElementsByClassName(".countries-image-parts");
+  console.log(jump);
+  jump.onclick = function () {
+    console.log("hello");
+    // window.open("/countries/" + jump);
+  };
 });
 
 const countries = getCountries();
@@ -156,4 +178,5 @@ countries.map((country) => {
 
   countryArr.push(countryObject);
 });
+
 // console.log(countryArr);
