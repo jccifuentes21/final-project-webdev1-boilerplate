@@ -12,8 +12,9 @@ export default class extends AbstractView {
     for (let i = 0; i <= countryArr.length - 1; i++) {
       const card = document.createElement("div");
       const country = countryArr[i];
-      console.log(countryArr[i]);
-      // console.log(countryArr);
+      const region = countryArr[i].region;
+      console.log(region);
+      // console.log(countryArr[i].region);
       card.innerHTML = `
     <a href=/countries/${country.cca3}>Link</a>
     <div class="countries-part-cards">
@@ -23,7 +24,7 @@ export default class extends AbstractView {
     <div class="countries-information-part">
     <h2>${country.name}</h2>
     <p>Population: ${country.population}</p>
-    <p>Region: ${country.region}</p>
+    <p class="filter-region">Region: ${country.region}</p>
     <p>Capital: ${country.capital}</p>
     </div>
     </div>
@@ -53,11 +54,11 @@ export default class extends AbstractView {
     </form>
     <select class="searching-part-slc">
     <option class="searching-part-slc-op" disabled selected hidden>Filter by Region</option>
-    <option class="searching-part-slc-op">Africa</option>
-    <option class="searching-part-slc-op">America</option>
-    <option class="searching-part-slc-op">Asia</option>
-    <option class="searching-part-slc-op">Europe</option>
-    <option class="searching-part-slc-op">Oceania</option>
+    <option class="searching-part-slc-op" id="africa">Africa</option>
+    <option class="searching-part-slc-op" id="america">Americas</option>
+    <option class="searching-part-slc-op" id="asia">Asia</option>
+    <option class="searching-part-slc-op" id="europe">Europe</option>
+    <option class="searching-part-slc-op" id="oceania">Oceania</option>
     </select>
     </div>
     <div class="container">

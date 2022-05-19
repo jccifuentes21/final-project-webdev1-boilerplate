@@ -13,17 +13,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
     "static/css/homepage/japan.jpg",
   ];
 
-  let index = 0;
-  const imgElement = document.querySelector("#backgroundImage");
+  // let index = 0;
+  // const imgElement = document.querySelector("#backgroundImage");
 
-  function change() {
-    imgElement.style.backgroundImage = `url(${images[index]})`;
-    index > 5 ? (index = 0) : index++;
-  }
+  // function change() {
+  //   imgElement.style.backgroundImage = `url(${images[index]})`;
+  //   index > 5 ? (index = 0) : index++;
+  // }
 
-  window.onload = function () {
-    setInterval(change, 5000);
-  };
+  // window.onload = function () {
+  //   setInterval(change, 5000);
+  // };
 
   const btn = document.getElementById("dark-light-mode");
   console.log(btn);
@@ -40,12 +40,47 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 
-  const jump = document.getElementsByClassName(".countries-image-parts");
-  console.log(jump);
-  jump.onclick = function () {
-    console.log("hello");
-    // window.open("/countries/" + jump);
-  };
+  // const region = countryArr[i].region;
+  // const countries = [];
+  // countries.push(region);
+  // console.log(region);
+
+  const select = document.querySelector(".searching-part-slc");
+
+  select.addEventListener("change", function (e) {
+    let filteredCountries = [];
+    // e.target.value
+    console.log(e.target.value);
+    for (let i = 0; i <= countryArr.length - 1; i++) {
+      if (e.target.value === countryArr[i].region) {
+        filteredCountries.push(countryArr[i]);
+      }
+    }
+
+    const containerhtml = document.querySelector(".container");
+    containerhtml.innerHTML = "";
+    for (let i = 0; i <= filteredCountries.length - 1; i++) {
+      // console.log(filteredCountries);
+      const card = document.createElement("div");
+      const filteredcountry = filteredCountries[i];
+      // console.log(filteredcountry.name);
+      card.innerHTML = `
+    <a href=/countries/${filteredcountry.cca3}>Link</a>
+    <div class="countries-part-cards">
+    <div class="countries-image-parts">
+    <img src="${filteredcountry.flagURL}">
+    </div>
+    <div class="countries-information-part">
+    <h2>${filteredcountry.name}</h2>
+    <p>Population: ${filteredcountry.population}</p>
+    <p class="filter-region">Region: ${filteredcountry.region}</p>
+    <p>Capital: ${filteredcountry.capital}</p>
+    </div>
+    </div>
+    `;
+      containerhtml.appendChild(card);
+    }
+  });
 });
 
 const countries = getCountries();
