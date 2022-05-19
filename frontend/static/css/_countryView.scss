@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #202c37;
+  font-family: 'Nunito Sans', sans-serif;
+}
+=======
+>>>>>>> ab3c3b9b13370e9349d0090432facb4564b90703
 
 
 
@@ -16,7 +29,8 @@
     height: 4.5rem;
     background-color: #2b3945;
 
-    h1 {
+    a {
+      text-decoration: none;
       font-size: 0.8rem;
       font-weight: 800;
       color: white;
@@ -30,7 +44,20 @@
   .content {
     display: flex;
     flex-direction: column;
+    
+    .country-data-container{
+      .country-flag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+          width: 70%;
+        }
+        margin: 0.5rem 0 2rem 0;
+        height: 12rem;
+      }
 
+    }
     .back-button {
       font-size: 0.85rem;
       background-color: #2b3945;
@@ -41,14 +68,9 @@
       padding: 0.25rem 1.75rem;
       margin: 2rem 1rem;
       box-shadow: 0px 0px 10px 0.75px #00000080;
+      border-radius: 0.25rem;
     }
 
-    .country-flag{
-      margin: 0.5rem;
-      align-self: center;
-      height: 12rem;
-      width: 80vw;
-    }
 
     #country-name {
       font-weight: 800;
@@ -87,8 +109,128 @@
         padding: 0.25rem 1.25rem;
         margin: 0.5rem 0.75rem;
         box-shadow: 0px 0px 10px 0.75px #00000080;
+        border-radius: 0.25rem;
       }
 
+    }
+  }
+}
+
+@media screen and (min-width: 376px) {
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
+    height: 5rem;
+    width: 100vw;
+    background-color: #2b3945;
+
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    button {
+      display: none;
+    }
+  }
+
+  .content {
+    padding-left: 4rem;
+
+    .back-button {
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      background-color: #2b3945;
+      text-decoration: none;
+      color: white;
+      width: fit-content;
+      margin: 2.5rem 0;
+      box-shadow: 0px 0px 10px 0.75px #00000080;
+      border-radius: 0.25rem;
+
+    }
+
+    .country-container {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+    }
+
+    .country-flag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.5rem;
+      width: 50vw;
+      img {
+        height: 320px;
+      }
+    }
+
+    .country-data-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .country-data {
+        display: flex;
+        flex-direction: row;
+
+
+
+        #country-name {
+          font-weight: 800;
+          color: white;
+          margin: 0.5rem 1rem;
+        }
+
+        .placeholder {
+          color: white;
+          font-weight: 600;
+          font-size: 0.9rem;
+          margin: 0.5rem 1rem;
+
+        }
+
+        .placeholder-content {
+          font-weight: 300;
+        }
+      }
+
+      .secondary-data {
+        padding-top: 2.5rem;
+        width: 50%;
+
+
+      }
+
+      h3 {
+        margin: 3rem 1rem 0.5rem 1rem;
+        font-weight: 600;
+        font-size: 1rem;
+        color: white;
+      }
+
+      .border-countries {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.5rem 1rem;
+
+        .border-country-button {
+          text-decoration: none;
+          background-color: #2b3945;
+          color: white;
+          padding: 0.25rem 1.25rem;
+          margin: 0.5rem 0.75rem;
+          box-shadow: 0px 0px 10px 0.75px #00000080;
+          border-radius: 0.25rem;
+        }
+
+      }
     }
   }
 }
