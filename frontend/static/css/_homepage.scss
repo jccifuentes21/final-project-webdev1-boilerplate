@@ -7,14 +7,6 @@
     font-size: 24px;
 }
 
-#headerHP {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 80px;
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.07);
-}
-
 #backgroundImage {
     width: 100%;
     height: 700px;
@@ -26,7 +18,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    transition: all 1s ;
+    transition: all 2s ease;
 
     @media screen and (max-width: 600px) {
         flex-direction: column;
@@ -43,7 +35,7 @@
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 600px) {
-        height: 70%;
+        height: 36rem;
         width: 70%;
 
     }
@@ -52,20 +44,19 @@
         flex-direction: column;
         height: 75%;
         width: 75%;
-        padding: 0.5rem;
+        padding: 1rem;
         box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.893);
         background-color: white;
         @media screen and (max-width: 600px) {
-            height: 70%;
+            height: 30rem;
             width: 70%;
     }
     
     #flagContainer {
-        // border: 1px solid black;
         width: 100%;
         height: 12rem;
-        // margin: 0.5rem;
-        
+        @media screen and (max-width: 600px) {
+    }
     }
 
     #flagHP {
@@ -76,29 +67,45 @@
 
     #countryNameHP {
         font-weight: 800;
-        font-size: 35px;
+        font-size: 2em;
         color: black;
         margin-top: 2rem;
+        @media screen and (max-width: 600px) {
+            height: 70%;
+            width: 70%;
+    }
     }
     
     #populationHP {
-        font-size: 20px;
+        font-size: 1em;
         color: black;
         margin-top: 1rem;
+        @media screen and (max-width: 600px) {
+            height: 70%;
+            width: 70%;
+    }
 
     }
 
     #regionHP {
-        font-size: 20px;
+        font-size: 1em;
         color: black;
         margin-top: 1rem;
+        @media screen and (max-width: 600px) {
+            height: 70%;
+            width: 70%;
+    }
 
     }
 
     #capitalHP {
-        font-size: 20px;
+        font-size: 1em;
         color: black;
-        margin-top: 1rem;
+        margin-top: 1rem;      
+        @media screen and (max-width: 600px) {
+            height: 70%;
+            width: 70%;
+    }
 
     }
     }

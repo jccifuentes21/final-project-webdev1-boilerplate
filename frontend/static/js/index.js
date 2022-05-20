@@ -60,16 +60,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     capital: "Capital: Tokyo",
   };
 
-  // const images = [
-  //   "static/css/homepage/brazil.jpg",
-  //   "static/css/homepage/canada.jpg",
-  //   "static/css/homepage/italy.jpg",
-  //   "static/css/homepage/czech.jpg",
-  //   "static/css/homepage/france.jpg",
-  //   "static/css/homepage/germany.jpg",
-  //   "static/css/homepage/japan.jpg",
-  // ];
-
   const countriesHomepage = [
     brazil,
     canada,
@@ -95,13 +85,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     population.innerHTML = countriesHomepage[index].population;
     region.innerHTML = countriesHomepage[index].region;
     capital.innerHTML = countriesHomepage[index].capital;
-
     index > 5 ? (index = 0) : index++;
   }
 
-  // window.onload = function () {
-  //   setInterval(change, 5000);
-  // };
+  window.onload = function () {
+    setInterval(change, 5000);
+  };
 
   //Dark mode setting
 
