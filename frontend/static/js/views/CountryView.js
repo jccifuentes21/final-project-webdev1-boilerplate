@@ -35,7 +35,7 @@ export default class extends AbstractView {
     return `
     <header>
     <div class="header" id="header">
-    <h1 id="dark-mode">Where in the world?</h1>
+    <h1><a class="link-viewpages" href=http://localhost:8081/>Where in the world?</a></h1>
     <div class="header-btn" id="dark-light-mode" data-toggle="light">
     <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
     <span id="span">Dark Mode</sapn>

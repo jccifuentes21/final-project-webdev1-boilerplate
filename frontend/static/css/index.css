@@ -129,9 +129,15 @@
   padding: 0;
 }
 
-body {
+body.light-mode {
   background-color: #fafafa;
   color: #111517;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body.dark-mode {
+  background-color: #202c37;
+  color: #ffffff;
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -311,6 +317,9 @@ body {
   .container .countries-part-cards .countries-information-part p {
     padding-bottom: 3%;
   }
+  .container .countries-part-cards .link-viewpages {
+    margin-left: 35%;
+  }
 }
 @media screen and (max-width: 376px) {
   body {
@@ -405,7 +414,6 @@ body {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 800;
-    color: white;
   }
   .header button {
     display: none;
@@ -417,9 +425,8 @@ body {
   .content .back-button {
     display: inline-block;
     padding: 0.5rem 2rem;
-    background-color: #2b3945;
+    background-color: #ffffff;
     text-decoration: none;
-    color: white;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -453,11 +460,9 @@ body {
   }
   .content .country-data-container .country-data #country-name {
     font-weight: 800;
-    color: white;
     margin: 0.5rem 1rem;
   }
   .content .country-data-container .country-data .placeholder {
-    color: white;
     font-weight: 600;
     font-size: 0.9rem;
     margin: 0.5rem 1rem;
@@ -473,7 +478,6 @@ body {
     margin: 3rem 1rem 0.5rem 1rem;
     font-weight: 600;
     font-size: 1rem;
-    color: white;
   }
   .content .country-data-container .border-countries {
     display: flex;
@@ -482,8 +486,7 @@ body {
   }
   .content .country-data-container .border-countries .border-country-button {
     text-decoration: none;
-    background-color: #2b3945;
-    color: white;
+    background-color: #ffffff;
     padding: 0.25rem 1.25rem;
     margin: 0.5rem 0.75rem;
     box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);

@@ -1,18 +1,22 @@
 import AbstractView from "./AbstractView.js";
 
-export default class extends AbstractView{
-    constructor(params) {
-        super(params);
-        this.setTitle("Homepage");
-    }
+export default class extends AbstractView {
+  constructor(params) {
+    super(params);
+    this.setTitle("Homepage");
+  }
 
-    async getHTML() {
-        
-        return `
-            <div id="headerHP">
-                <h1 id="nameHP">Where in the world?</h1>
-                <button id="mode">Dark Mode</button>
+  async getHTML() {
+    return `
+            <header>
+            <div class="header" id="header">
+            <h1>Where in the world?</h1>
+            <div class="header-btn" id="dark-light-mode" data-toggle="light">
+            <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
+            <span id="span">Dark Mode</sapn>
             </div>
+            </div>
+        </header>
 
             <section id="homepage">
                 <div id="backgroundImage">
@@ -35,5 +39,5 @@ export default class extends AbstractView{
                 <h3>Final project of CICCC students</h3>
             </section>
         `;
-    }
+  }
 }

@@ -4,12 +4,28 @@
     margin: 0;
     padding: 0;
   }
-  
-  body{
+
+  body {
     background-color: #fafafa;
-    color: #111517;
-    font-family: 'Nunito Sans', sans-serif;
+        color: #111517;
+        font-family: 'Nunito Sans', sans-serif;
   }
+
+// body.light-mode {
+//     background-color: #fafafa;
+//     color: #111517;
+//     font-family: 'Nunito Sans', sans-serif;
+// }
+// body.dark-mode {
+//     background-color: #202c37;
+//     color: #ffffff;
+//     font-family: 'Nunito Sans', sans-serif;
+// }
+  
+//   body{
+//     color: #111517;
+//     font-family: 'Nunito Sans', sans-serif;
+//   }
 
 //Searching part style settings
 
@@ -21,10 +37,14 @@
     padding-left: 1rem;
     height: 4.5rem;
     background-color: #ffffff;
+    
 
     h1 {
       font-size: 0.8rem;
       font-weight: 800;
+      .link-home {
+          color: #111517;
+      }
     }
 
     .header-btn {
@@ -195,6 +215,9 @@
                 p {
                     padding-bottom: 3%;
                 }
+            }
+            .link-viewpages {
+                margin-left:35%;
             }
         }
     }
