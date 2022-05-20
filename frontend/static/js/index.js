@@ -92,27 +92,55 @@ window.addEventListener("DOMContentLoaded", (event) => {
     setInterval(change, 5000);
   };
 
+  //Dark mode setting
+
   const btn = document.getElementById("dark-light-mode");
-  console.log(btn);
+  const headerColor = document.getElementById("header");
+  const divInfoColor = document.getElementById("divInfo");
+  const inputColor = document.getElementById("searching-input");
+  const selectColor = document.getElementById("select");
 
   btn.addEventListener("click", function () {
-    if (btn.getAttribute("data-toggle") == "dark") {
-      document.body.classList.remove("background-dark-theme");
-      document.body.classList.add("background-light-theme");
-      btn.setAttribute("data-toggle", "light");
-    } else {
-      document.body.classList.remove("background-light-theme");
-      document.body.classList.add("background-dark-theme");
+    if (btn.getAttribute("data-toggle") == "light") {
+      document.body.style.backgroundColor = "#202c37";
+      document.body.style.color = "#ffffff";
+      headerColor.style.backgroundColor = "#2b3945";
+      inputColor.style.backgroundColor = "#2b3945";
+      selectColor.style.backgroundColor = "#2b3945";
+      selectColor.style.color = "#ffffff";
+      for (let i = 0; i <= countryArr.length - 1; i++) {
+        divInfoColor.style.backgroundColor = "#2b3945";
+      }
+      localStorage.setItem("dark-mode-settings", "dark");
       btn.setAttribute("data-toggle", "dark");
+    } else {
+      document.body.style.backgroundColor = "#fafafa";
+      document.body.style.color = "#111517";
+      headerColor.style.backgroundColor = "#ffffff";
+      inputColor.style.backgroundColor = "#ffffff";
+      selectColor.style.backgroundColor = "#ffffff";
+      selectColor.style.color = "#111517";
+      for (let i = 0; i <= countryArr.length - 1; i++) {
+        divInfoColor.style.backgroundColor = "#ffffff";
+      }
+      localStorage.setItem("dark-mode-settings", "light");
+      btn.setAttribute("data-toggle", "light");
+      if (localStorage.getItem("dark-mode-settings") === "dark") {
+        document.body.style.backgroundColor = "#202c37";
+        btn.checked = true;
+      } else if (localStorage.getItem("dark-mode-settings") === "light") {
+        document.body.style.backgroundColor = "#fafafa";
+      }
     }
   });
 
-  const select = document.querySelector(".searching-part-slc");
+  //Filter function with select elements
 
-  select.addEventListener("change", function (e) {
+  const select = document.getElementById("select");
+
+  select.addEventListener(`change`, function (e) {
     let filteredCountries = [];
-    // e.target.value
-    console.log(e.target.value);
+
     for (let i = 0; i <= countryArr.length - 1; i++) {
       if (e.target.value === countryArr[i].region) {
         filteredCountries.push(countryArr[i]);
@@ -122,27 +150,29 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const containerhtml = document.querySelector(".container");
     containerhtml.innerHTML = "";
     for (let i = 0; i <= filteredCountries.length - 1; i++) {
-      // console.log(filteredCountries);
       const card = document.createElement("div");
       const filteredcountry = filteredCountries[i];
-      // console.log(filteredcountry.name);
       card.innerHTML = `
-    <a href=/countries/${filteredcountry.cca3}>Link</a>
     <div class="countries-part-cards">
     <div class="countries-image-parts">
     <img src="${filteredcountry.flagURL}">
     </div>
+    <div>
     <div class="countries-information-part">
     <h2>${filteredcountry.name}</h2>
     <p>Population: ${filteredcountry.population}</p>
     <p class="filter-region">Region: ${filteredcountry.region}</p>
     <p>Capital: ${filteredcountry.capital}</p>
     </div>
+    <a class="link-viewpages" href=/countries/${filteredcountry.cca3}>Go to a view page →</a>
+    </div>
     </div>
     `;
       containerhtml.appendChild(card);
     }
   });
+
+  //Filter function with input
 
   const inputText = document.getElementById("searching-input");
   inputText.addEventListener(`keypress`, showUp);
@@ -161,16 +191,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
         const card = document.createElement("div");
         const searchingnames = searchinghtml[i];
         card.innerHTML = `
-    <a href=/countries/${searchingnames.cca3}>Link</a>
     <div class="countries-part-cards">
     <div class="countries-image-parts">
     <img src="${searchingnames.flagURL}">
     </div>
+    <div>
     <div class="countries-information-part">
     <h2>${searchingnames.name}</h2>
     <p>Population: ${searchingnames.population}</p>
     <p class="filter-region">Region: ${searchingnames.region}</p>
     <p>Capital: ${searchingnames.capital}</p>
+    </div>
+    <a class="link-viewpages" href=/countries/${searchingnames.cca3}>Go to a view page →</a>
     </div>
     </div>
     `;

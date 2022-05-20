@@ -2,41 +2,46 @@ import AbstractView from "./AbstractView.js";
 import { countryArr } from "../index.js";
 
 export default class extends AbstractView {
-    constructor(params) {
-        super(params);
-        this.setTitle("Country");
-    }
+  constructor(params) {
+    super(params);
+    this.setTitle("Country");
+  }
 
-    async getHTML() {
-        const countryID = this.params.id;
+  async getHTML() {
+    const countryID = this.params.id;
 
-        const currentCountry = countryArr.find(country => country.cca3 == countryID);
+    const currentCountry = countryArr.find(
+      (country) => country.cca3 == countryID
+    );
 
-        console.log(currentCountry)
-        const borderCountriesContainer = document.createElement("div");
-        
-        currentCountry.borderCountries.map(country =>{
-            let borderCountry = countryArr.find( border => border.cca3 == country)
+    console.log(currentCountry);
+    const borderCountriesContainer = document.createElement("div");
 
-            const borderButton = document.createElement("a");
-            console.log(borderCountry.name)
+    currentCountry.borderCountries.map((country) => {
+      let borderCountry = countryArr.find((border) => border.cca3 == country);
 
-            borderButton.innerHTML = borderCountry.name
-            borderButton.setAttribute("href", borderCountry.cca3);
-            borderButton.className = "border-country-button";
+      const borderButton = document.createElement("a");
+      console.log(borderCountry.name);
 
-            borderCountriesContainer.appendChild(borderButton)
-        })
+      borderButton.innerHTML = borderCountry.name;
+      borderButton.setAttribute("href", borderCountry.cca3);
+      borderButton.className = "border-country-button";
 
-        console.log(borderCountriesContainer)
+      borderCountriesContainer.appendChild(borderButton);
+    });
 
-        return `
-        <header>
-            <div class="header">
-            <a href = "/">Where in the world?</a>
-            <button id="dark-light-mode"></button>
-            </div>
-        </header>
+    console.log(borderCountriesContainer);
+
+    return `
+    <header>
+    <div class="header" id="header">
+    <h1 id="dark-mode">Where in the world?</h1>
+    <div class="header-btn" id="dark-light-mode" data-toggle="light">
+    <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
+    <span id="span">Dark Mode</sapn>
+    </div>
+    </div>
+</header>
     
         <div class="content">
             <a href="/countries" class="back-button"><span class="fa fa-arrow-left"></span>&nbsp;&nbsp;Back</a>
@@ -70,5 +75,5 @@ export default class extends AbstractView {
             </div>
         </div>
         `;
-    }
+  }
 }
