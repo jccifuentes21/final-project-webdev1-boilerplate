@@ -111,7 +111,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       for (let i = 0; i <= countryArr.length - 1; i++) {
         divInfoColor.style.backgroundColor = "#2b3945";
       }
-      localStorage.setItem("dark-mode-settings", "dark");
+      // localStorage.setItem("dark-mode-settings", "dark");
       btn.setAttribute("data-toggle", "dark");
     } else {
       document.body.style.backgroundColor = "#fafafa";
@@ -123,16 +123,47 @@ window.addEventListener("DOMContentLoaded", (event) => {
       for (let i = 0; i <= countryArr.length - 1; i++) {
         divInfoColor.style.backgroundColor = "#ffffff";
       }
-      localStorage.setItem("dark-mode-settings", "light");
+      //     localStorage.setItem("dark-mode-settings", "light");
       btn.setAttribute("data-toggle", "light");
-      if (localStorage.getItem("dark-mode-settings") === "dark") {
-        document.body.style.backgroundColor = "#202c37";
-        btn.checked = true;
-      } else if (localStorage.getItem("dark-mode-settings") === "light") {
-        document.body.style.backgroundColor = "#fafafa";
-      }
+      //     if (localStorage.getItem("dark-mode-settings") === "dark") {
+      //       document.body.style.backgroundColor = "#202c37";
+      //       btn.checked = true;
+      //     } else if (localStorage.getItem("dark-mode-settings") === "light") {
+      //       document.body.style.backgroundColor = "#fafafa";
+      //     }
     }
   });
+
+  // const btn = document.querySelector(".header-btn[data-mode]");
+  // const body = document.querySelector("body");
+  // const header = document.getElementsByClassName(".header");
+
+  // const darkModeParam = localStorage.getItem("dark-mode-param");
+  // if (darkModeParam == "light-mode") {
+  //   btn.dataset.mode == "light-mode";
+  //   body.className = "light-mode";
+  //   header.className = "light-mode";
+  // } else if (darkModeParam == "dark-mode") {
+  //   btn.dataset.mode === "dark-mode";
+  //   body.className = "dark-mode";
+  //   header.className = "dark-mode";
+  // }
+
+  // function changeMode(mode) {
+  //   localStorage.setItem("dark-mode-param", mode);
+  //   body.className = mode;
+  //   header.className = mode;
+  //   btn.dataset.mode = mode;
+  // }
+
+  // btn.addEventListener("click", (event) =>
+  //   changeMode(
+  //     event.target.dataset.mode === "light-mode" ? "dark-mode" : "light-mode"
+  //   )
+  // );
+
+  // localStorage.setItem("dark-mode-param", "mode-dark");
+  // localStorage.getItem("dark-mode-param");
 
   //Filter function with select elements
 
@@ -272,5 +303,4 @@ countries.map((country) => {
 
   countryArr.push(countryObject);
 });
-
 // console.log(countryArr);
