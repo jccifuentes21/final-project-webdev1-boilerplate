@@ -85,7 +85,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     population.innerHTML = countriesHomepage[index].population;
     region.innerHTML = countriesHomepage[index].region;
     capital.innerHTML = countriesHomepage[index].capital;
-
     index > 5 ? (index = 0) : index++;
   }
 

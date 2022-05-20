@@ -11,8 +11,11 @@ export default class extends AbstractView{
         return `
             <header>
                 <div class="header">
-                    <a href = "/">Where in the world?</a>
-                    <button id="dark-light-mode"></button>
+                    <h1>Where in the world?</h1>
+                    <div class="header-btn" id="dark-light-mode" data-toggle="dark">
+                        <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
+                        <span>Dark Mode</sapn>
+                    </div>
                 </div>
             </header>
 
