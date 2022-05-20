@@ -31,14 +31,14 @@
   width: 450px;
   background-color: rgba(255, 255, 255, 0.563);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.893);
-  margin: 25px;
+  margin: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media screen and (max-width: 600px) {
   #rectangle {
-    height: 36rem;
+    height: 35rem;
     width: 70%;
   }
 }
@@ -48,6 +48,7 @@
   height: 75%;
   width: 75%;
   padding: 1rem;
+  margin: 3rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.893);
   background-color: white;
 }
@@ -145,15 +146,9 @@
   padding: 0;
 }
 
-body.light-mode {
+body {
   background-color: #fafafa;
   color: #111517;
-  font-family: "Nunito Sans", sans-serif;
-}
-
-body.dark-mode {
-  background-color: #202c37;
-  color: #ffffff;
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -169,6 +164,9 @@ body.dark-mode {
 .header h1 {
   font-size: 0.8rem;
   font-weight: 800;
+}
+.header h1 .link-home {
+  color: #111517;
 }
 .header .header-btn {
   padding-right: 1rem;
@@ -214,7 +212,7 @@ body.dark-mode {
   border: none;
 }
 
-@media screen and (min-width: 376px) and (max-width: 1440px) {
+@media screen and (min-width: 376px) {
   .header {
     display: flex;
     justify-content: space-between;
@@ -298,7 +296,7 @@ body.dark-mode {
   cursor: pointer;
 }
 
-@media screen and (min-width: 376px) and (max-width: 1440px) {
+@media screen and (min-width: 376px) {
   .container {
     display: grid;
     grid-template-columns: repeat(4, 20.5%);
