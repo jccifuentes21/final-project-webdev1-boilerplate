@@ -9,10 +9,12 @@ export default class extends AbstractView{
     async getHTML() {
         
         return `
-            <div id="headerHP">
-                <h1 id="nameHP">Where in the world?</h1>
-                <button id="mode">Dark Mode</button>
-            </div>
+            <header>
+                <div class="header">
+                    <a href = "/">Where in the world?</a>
+                    <button id="dark-light-mode"></button>
+                </div>
+            </header>
 
             <section id="homepage">
                 <div id="backgroundImage">
