@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
 
   window.onload = function () {
-    setInterval(change, 1000);
+    setInterval(change, 5000);
   };
 
   //Dark mode setting
