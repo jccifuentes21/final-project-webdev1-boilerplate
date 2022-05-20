@@ -111,7 +111,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
       for (let i = 0; i <= countryArr.length - 1; i++) {
         divInfoColor.style.backgroundColor = "#2b3945";
       }
-      // localStorage.setItem("dark-mode-settings", "dark");
       btn.setAttribute("data-toggle", "dark");
     } else {
       document.body.style.backgroundColor = "#fafafa";
@@ -123,14 +122,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       for (let i = 0; i <= countryArr.length - 1; i++) {
         divInfoColor.style.backgroundColor = "#ffffff";
       }
-      //     localStorage.setItem("dark-mode-settings", "light");
       btn.setAttribute("data-toggle", "light");
-      //     if (localStorage.getItem("dark-mode-settings") === "dark") {
-      //       document.body.style.backgroundColor = "#202c37";
-      //       btn.checked = true;
-      //     } else if (localStorage.getItem("dark-mode-settings") === "light") {
-      //       document.body.style.backgroundColor = "#fafafa";
-      //     }
     }
   });
 
@@ -243,6 +235,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
 });
 
+//Country's array part
+
 const countries = getCountries();
 let countryObject = [];
 
@@ -303,4 +297,3 @@ countries.map((country) => {
 
   countryArr.push(countryObject);
 });
-// console.log(countryArr);
