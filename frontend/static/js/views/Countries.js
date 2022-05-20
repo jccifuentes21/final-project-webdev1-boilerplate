@@ -12,32 +12,32 @@ export default class extends AbstractView {
     for (let i = 0; i <= countryArr.length - 1; i++) {
       const card = document.createElement("div");
       const country = countryArr[i];
-      const region = countryArr[i].region;
-      // console.log(countryArr[i].region);
       card.innerHTML = `
-    <a href=/countries/${country.cca3}>Link</a>
-    <div class="countries-part-cards">
-    <div class="countries-image-parts">
-    <img src="${countryArr[i].flagURL}">
-    </div>
-    <div class="countries-information-part">
-    <h2>${country.name}</h2>
-    <p>Population: ${country.population}</p>
-    <p class="filter-region">Region: ${country.region}</p>
-    <p>Capital: ${country.capital}</p>
-    </div>
-    </div>
+      <div class="countries-part-cards" >
+      <div class="countries-image-parts">
+      <img src="${countryArr[i].flagURL}">
+      </div>
+      <div>
+      <div class="countries-information-part" id="divInfo">
+      <h2>${country.name}</h2>
+      <p>Population: ${country.population}</p>
+      <p class="filter-region">Region: ${country.region}</p>
+      <p>Capital: ${country.capital}</p>
+      </div>
+      <a class="link-viewpages" href=/countries/${country.cca3}>Go to a view page →</a>
+      </div>
+      </div>
     `;
       cards1.appendChild(card);
     }
 
     return `
     <header>
-            <div class="header">
-            <h1>Where in the world?</h1>
-            <div class="header-btn" id="dark-light-mode" data-toggle="dark">
+            <div class="header" id="header">
+            <h1 id="dark-mode">Where in the world?</h1>
+            <div class="header-btn" id="dark-light-mode" data-toggle="light">
             <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
-            <span>Dark Mode</sapn>
+            <span id="span">Dark Mode</sapn>
             </div>
             </div>
         </header>
@@ -47,11 +47,11 @@ export default class extends AbstractView {
     <span
             class="iconify searching-part-icon"
             data-icon="ant-design:search-outlined"
-            style="color: #ccc; font-size: 17px"
+            style="color: #ccc; font-size: 14px"
           ></span>
     <input type="text" name="searching" placeholder="Search for a country..." class="searching-part-inpt" id="searching-input" style="border:none">
     </form>
-    <select class="searching-part-slc">
+    <select class="searching-part-slc" id="select">
     <option class="searching-part-slc-op" disabled selected hidden>Filter by Region</option>
     <option class="searching-part-slc-op" id="africa">Africa</option>
     <option class="searching-part-slc-op" id="america">Americas</option>
@@ -60,23 +60,10 @@ export default class extends AbstractView {
     <option class="searching-part-slc-op" id="oceania">Oceania</option>
     </select>
     </div>
-    <div class="container">
+    <div class="container" id="dark-mode">
     ${cards1.innerHTML}
     </div>
     </section>
     `;
   }
 }
-
-// const btn = document.getElementById("dark-light-mode");
-// console.log(btn);
-
-// btn.addEventListener("click", function () {
-//   if (btn.checked == true) {
-//     document.body.classList.remove("background-light-theme");
-//     document.body.classList.add("background-dark-theme");
-//   } else {
-//     document.body.classList.remove("background-dark-theme");
-//     document.body.classList.add("background-light-theme");
-//   }
-// });
