@@ -9,6 +9,7 @@ export default class extends AbstractView {
 
   async getHTML() {
     const cards1 = document.createElement("div");
+    console.log(countryArr.name);
     for (let i = 0; i <= countryArr.length - 1; i++) {
       const card = document.createElement("div");
       const country = countryArr[i];
@@ -50,7 +51,7 @@ export default class extends AbstractView {
             data-icon="ant-design:search-outlined"
             style="color: #ccc; font-size: 14px"
           ></span>
-    <input type="text" name="searching" placeholder="Search for a country..." class="searching-part-inpt lightmode" id="searching-input" data-theme = "light" style="border:none">
+    <input type="text" name="searching" oninput="inputChange()" placeholder="Search for a country..." class="searching-part-inpt lightmode" id="searching-input" data-theme = "light" style="border:none">
     </form>
     <select class="searching-part-slc lightmode" id="select" data-theme = "light">
     <option class="searching-part-slc-op" disabled selected hidden>Filter by Region</option>
