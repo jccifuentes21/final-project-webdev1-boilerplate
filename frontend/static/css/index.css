@@ -146,9 +146,39 @@
 }
 
 body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.countryViewButtonlight {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
+  color: #111517;
+}
+
+.countryViewButtondark {
+  background-color: #2b3945;
+  box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
+  color: #ffffff;
+}
+
+.bodylightmode {
   background-color: #fafafa;
   color: #111517;
-  font-family: "Nunito Sans", sans-serif;
+}
+
+.bodydarkmode {
+  background-color: #202c37;
+  color: #ffffff;
+}
+
+.lightmode {
+  background-color: #ffffff;
+  color: #111517;
+}
+
+.darkmode {
+  background-color: #2b3945;
+  color: #ffffff;
 }
 
 .header {
@@ -158,14 +188,10 @@ body {
   width: 100vw;
   padding-left: 1rem;
   height: 4.5rem;
-  background-color: #ffffff;
 }
-.header h1 {
+.header .header-title {
   font-size: 0.8rem;
   font-weight: 800;
-}
-.header h1 .link-home {
-  color: #111517;
 }
 .header .header-btn {
   padding-right: 1rem;
@@ -193,7 +219,6 @@ body {
   width: 90%;
   margin: 5% 5% 0% 5%;
   padding: 1% 0% 1% 20%;
-  background-color: #ffffff;
   height: 3em;
   border-radius: 5px;
 }
@@ -204,7 +229,6 @@ body {
   height: 3.5em;
   border-radius: 5px;
   border: none;
-  background-color: #ffffff;
 }
 .searching-part .searching-part-slc .searching-part-slc-op {
   border-radius: 5px;
@@ -218,12 +242,13 @@ body {
     width: 100%;
     height: 4rem;
   }
-  .header h1 {
-    padding-left: 1%;
+  .header .header-title {
     font-size: 1.5rem;
     font-weight: 800;
   }
   .header .header-btn {
+    padding-left: 1%;
+    font-size: 1rem;
     margin-right: 5%;
     cursor: pointer;
   }
@@ -266,29 +291,28 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.container .countries-part-cards .countries-image-parts img {
+.container .countries-part-cards .countries-image-parts .country-images {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: 100%;
   height: 100%;
 }
 .container .countries-part-cards .countries-information-part {
-  background-color: #ffffff;
   height: 55%;
   padding: 0% 10%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.container .countries-part-cards .countries-information-part h2 {
+.container .countries-part-cards .countries-information-part .information-part-h2 {
   padding: 10% 0%;
   font-size: 18px;
 }
-.container .countries-part-cards .countries-information-part p {
+.container .countries-part-cards .countries-information-part .information-part-p {
   padding-bottom: 5%;
   font-size: 14px;
 }
 .container .countries-part-cards .link-viewpages {
-  margin-left: 40%;
+  text-decoration: none;
 }
 
 .country-id {
@@ -312,7 +336,7 @@ body {
   .container .countries-part-cards .countries-image-parts {
     height: 45%;
   }
-  .container .countries-part-cards .countries-image-parts img {
+  .container .countries-part-cards .countries-image-parts .country-images {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 100%;
@@ -324,10 +348,10 @@ body {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
-  .container .countries-part-cards .countries-information-part h2 {
+  .container .countries-part-cards .countries-information-part .information-part-h2 {
     padding: 10% 0%;
   }
-  .container .countries-part-cards .countries-information-part p {
+  .container .countries-part-cards .countries-information-part .information-part-p {
     padding-bottom: 3%;
   }
   .container .countries-part-cards .link-viewpages {
@@ -373,7 +397,6 @@ body {
   }
   .content .back-button {
     font-size: 0.85rem;
-    background-color: #ffffff;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -381,7 +404,6 @@ body {
     font-weight: 300;
     padding: 0.25rem 1.75rem;
     margin: 2rem 1rem;
-    box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
     border-radius: 0.25rem;
   }
   .content #country-name {
@@ -408,10 +430,8 @@ body {
   }
   .content .border-countries .border-country-button {
     text-decoration: none;
-    background-color: #ffffff;
     padding: 0.25rem 1.25rem;
     margin: 0.5rem 0.75rem;
-    box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
     border-radius: 0.25rem;
   }
 }
@@ -438,13 +458,11 @@ body {
   .content .back-button {
     display: inline-block;
     padding: 0.5rem 2rem;
-    background-color: #ffffff;
     text-decoration: none;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin: 2.5rem 0;
-    box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
     border-radius: 0.25rem;
   }
   .content .country-container {
@@ -499,10 +517,8 @@ body {
   }
   .content .country-data-container .border-countries .border-country-button {
     text-decoration: none;
-    background-color: #ffffff;
     padding: 0.25rem 1.25rem;
     margin: 0.5rem 0.75rem;
-    box-shadow: 0px 0px 10px 0.75px rgba(0, 0, 0, 0.5019607843);
     border-radius: 0.25rem;
   }
 }/*# sourceMappingURL=index.css.map */

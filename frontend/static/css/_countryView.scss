@@ -42,13 +42,11 @@
     }
     .back-button {
       font-size: 0.85rem;
-      background-color: #ffffff;
       width: fit-content;
       text-decoration: none;
       font-weight: 300;
       padding: 0.25rem 1.75rem;
       margin: 2rem 1rem;
-      box-shadow: 0px 0px 10px 0.75px #00000080;
       border-radius: 0.25rem;
     }
 
@@ -82,10 +80,8 @@
 
       .border-country-button {
         text-decoration: none;
-        background-color: #ffffff;
         padding: 0.25rem 1.25rem;
         margin: 0.5rem 0.75rem;
-        box-shadow: 0px 0px 10px 0.75px #00000080;
         border-radius: 0.25rem;
       }
 
@@ -119,11 +115,9 @@
     .back-button {
       display: inline-block;
       padding: 0.5rem 2rem;
-      background-color: #ffffff;
       text-decoration: none;
       width: fit-content;
       margin: 2.5rem 0;
-      box-shadow: 0px 0px 10px 0.75px #00000080;
       border-radius: 0.25rem;
 
     }
@@ -193,13 +187,10 @@
 
         .border-country-button {
           text-decoration: none;
-          background-color: #ffffff;
           padding: 0.25rem 1.25rem;
           margin: 0.5rem 0.75rem;
-          box-shadow: 0px 0px 10px 0.75px #00000080;
           border-radius: 0.25rem;
         }
-
       }
     }
   }

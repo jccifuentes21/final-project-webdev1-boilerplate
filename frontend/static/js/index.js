@@ -71,111 +71,76 @@ window.addEventListener("DOMContentLoaded", (event) => {
   ];
 
   let index = 0;
-  const imgElement = document.querySelector("#backgroundImage");
-  const countryName = document.querySelector("#countryNameHP");
-  const flag = document.querySelector("#flagHP");
-  const population = document.querySelector("#populationHP");
-  const region = document.querySelector("#regionHP");
-  const capital = document.querySelector("#capitalHP");
 
-  function change() {
-    imgElement.style.backgroundImage = `url("${countriesHomepage[index].backgroundImage}")`;
-    countryName.innerHTML = countriesHomepage[index].countryName;
-    flag.src = countriesHomepage[index].flag;
-    population.innerHTML = countriesHomepage[index].population;
-    region.innerHTML = countriesHomepage[index].region;
-    capital.innerHTML = countriesHomepage[index].capital;
-    index > 5 ? (index = 0) : index++;
-  }
-
-  window.onload = function () {
-    setInterval(change, 5000);
-  };
-
-  //Dark mode setting
-
-  const btn = document.getElementById("dark-light-mode");
-  const headerColor = document.getElementById("header");
-  const divInfoColor = document.getElementById("divInfo");
-  const inputColor = document.getElementById("searching-input");
-  const selectColor = document.getElementById("select");
-
-  btn.addEventListener("click", function () {
-    if (btn.getAttribute("data-toggle") == "light") {
-      document.body.style.backgroundColor = "#202c37";
-      document.body.style.color = "#ffffff";
-      headerColor.style.backgroundColor = "#2b3945";
-      inputColor.style.backgroundColor = "#2b3945";
-      selectColor.style.backgroundColor = "#2b3945";
-      selectColor.style.color = "#ffffff";
-      for (let i = 0; i <= countryArr.length - 1; i++) {
-        divInfoColor.style.backgroundColor = "#2b3945";
-      }
-      btn.setAttribute("data-toggle", "dark");
-    } else {
-      document.body.style.backgroundColor = "#fafafa";
-      document.body.style.color = "#111517";
-      headerColor.style.backgroundColor = "#ffffff";
-      inputColor.style.backgroundColor = "#ffffff";
-      selectColor.style.backgroundColor = "#ffffff";
-      selectColor.style.color = "#111517";
-      for (let i = 0; i <= countryArr.length - 1; i++) {
-        divInfoColor.style.backgroundColor = "#ffffff";
-      }
-      btn.setAttribute("data-toggle", "light");
+  console.log();
+  if (window.location.pathname === "/") {
+    //homepage ↓↓↓
+    const imgElement = document.querySelector("#backgroundImage");
+    const countryName = document.querySelector("#countryNameHP");
+    const flag = document.querySelector("#flagHP");
+    const population = document.querySelector("#populationHP");
+    const region = document.querySelector("#regionHP");
+    const capital = document.querySelector("#capitalHP");
+    function change() {
+      imgElement.style.backgroundImage = `url("${countriesHomepage[index].backgroundImage}")`;
+      countryName.innerHTML = countriesHomepage[index].countryName;
+      flag.src = countriesHomepage[index].flag;
+      population.innerHTML = countriesHomepage[index].population;
+      region.innerHTML = countriesHomepage[index].region;
+      capital.innerHTML = countriesHomepage[index].capital;
+      index > 5 ? (index = 0) : index++;
     }
-  });
+    window.onload = function () {
+      setInterval(change, 5000);
+    };
 
-  // const btn = document.querySelector(".header-btn[data-mode]");
-  // const body = document.querySelector("body");
-  // const header = document.getElementsByClassName(".header");
-
-  // const darkModeParam = localStorage.getItem("dark-mode-param");
-  // if (darkModeParam == "light-mode") {
-  //   btn.dataset.mode == "light-mode";
-  //   body.className = "light-mode";
-  //   header.className = "light-mode";
-  // } else if (darkModeParam == "dark-mode") {
-  //   btn.dataset.mode === "dark-mode";
-  //   body.className = "dark-mode";
-  //   header.className = "dark-mode";
-  // }
-
-  // function changeMode(mode) {
-  //   localStorage.setItem("dark-mode-param", mode);
-  //   body.className = mode;
-  //   header.className = mode;
-  //   btn.dataset.mode = mode;
-  // }
-
-  // btn.addEventListener("click", (event) =>
-  //   changeMode(
-  //     event.target.dataset.mode === "light-mode" ? "dark-mode" : "light-mode"
-  //   )
-  // );
-
-  // localStorage.setItem("dark-mode-param", "mode-dark");
-  // localStorage.getItem("dark-mode-param");
-
-  //Filter function with select elements
-
-  const select = document.getElementById("select");
-
-  select.addEventListener(`change`, function (e) {
-    let filteredCountries = [];
-
-    for (let i = 0; i <= countryArr.length - 1; i++) {
-      if (e.target.value === countryArr[i].region) {
-        filteredCountries.push(countryArr[i]);
+    //Darkmode settings
+    const btn = document.getElementById("dark-light-mode");
+    btn.addEventListener("click", function () {
+      if (btn.getAttribute("data-toggle") == "light") {
+        const elements = document.querySelectorAll("[data-theme ='light']");
+        const bodyelements = document.querySelector(
+          "[data-theme ='bodylight']"
+        );
+        bodyelements.classList.remove("bodylightmode");
+        bodyelements.classList.add("bodydarkmode");
+        for (let element of elements) {
+          element.classList.remove("lightmode");
+          element.classList.add("darkmode");
+        }
+        btn.setAttribute("data-toggle", "dark");
+      } else if (btn.getAttribute("data-toggle") == "dark") {
+        const elements = document.querySelectorAll("[data-theme ='light']");
+        const bodyelements = document.querySelector(
+          "[data-theme ='bodylight']"
+        );
+        bodyelements.classList.remove("bodydarkmode");
+        bodyelements.classList.add("bodylightmode");
+        for (let element of elements) {
+          element.classList.remove("darkmode");
+          element.classList.add("lightmode");
+        }
+        btn.setAttribute("data-toggle", "light");
       }
-    }
+    });
+  } else if (window.location.pathname === "/countries") {
+    //Countries page↓↓↓
 
-    const containerhtml = document.querySelector(".container");
-    containerhtml.innerHTML = "";
-    for (let i = 0; i <= filteredCountries.length - 1; i++) {
-      const card = document.createElement("div");
-      const filteredcountry = filteredCountries[i];
-      card.innerHTML = `
+    //Filter function with select
+    const select = document.getElementById("select");
+    select.addEventListener(`change`, function (e) {
+      let filteredCountries = [];
+      for (let i = 0; i <= countryArr.length - 1; i++) {
+        if (e.target.value === countryArr[i].region) {
+          filteredCountries.push(countryArr[i]);
+        }
+      }
+      const containerhtml = document.querySelector(".container");
+      containerhtml.innerHTML = "";
+      for (let i = 0; i <= filteredCountries.length - 1; i++) {
+        const card = document.createElement("div");
+        const filteredcountry = filteredCountries[i];
+        card.innerHTML = `
     <div class="countries-part-cards">
     <div class="countries-image-parts">
     <img src="${filteredcountry.flagURL}">
@@ -191,29 +156,27 @@ window.addEventListener("DOMContentLoaded", (event) => {
     </div>
     </div>
     `;
-      containerhtml.appendChild(card);
-    }
-  });
-
-  //Filter function with input
-
-  const inputText = document.getElementById("searching-input");
-  inputText.addEventListener(`keypress`, showUp);
-
-  function showUp(e) {
-    let searchinghtml = [];
-    if (e.keyCode === 13) {
-      for (let i = 0; i <= countryArr.length - 1; i++) {
-        if (inputText.value === countryArr[i].name) {
-          searchinghtml.push(countryArr[i]);
-        }
+        containerhtml.appendChild(card);
       }
-      const containerhtml = document.querySelector(".container");
-      containerhtml.innerHTML = "";
-      for (let i = 0; i <= searchinghtml.length - 1; i++) {
-        const card = document.createElement("div");
-        const searchingnames = searchinghtml[i];
-        card.innerHTML = `
+    });
+
+    //Searching function with input
+    const inputText = document.getElementById("searching-input");
+    inputText.addEventListener(`keypress`, showUp);
+    function showUp(e) {
+      let searchinghtml = [];
+      if (e.keyCode === 13) {
+        for (let i = 0; i <= countryArr.length - 1; i++) {
+          if (inputText.value === countryArr[i].name) {
+            searchinghtml.push(countryArr[i]);
+          }
+        }
+        const containerhtml = document.querySelector(".container");
+        containerhtml.innerHTML = "";
+        for (let i = 0; i <= searchinghtml.length - 1; i++) {
+          const card = document.createElement("div");
+          const searchingnames = searchinghtml[i];
+          card.innerHTML = `
     <div class="countries-part-cards">
     <div class="countries-image-parts">
     <img src="${searchingnames.flagURL}">
@@ -229,9 +192,91 @@ window.addEventListener("DOMContentLoaded", (event) => {
     </div>
     </div>
     `;
-        containerhtml.appendChild(card);
+          containerhtml.appendChild(card);
+        }
       }
     }
+    //Darkmode settings
+    const btn = document.getElementById("dark-light-mode");
+    btn.addEventListener("click", function () {
+      if (btn.getAttribute("data-toggle") == "light") {
+        const elements = document.querySelectorAll("[data-theme ='light']");
+        const bodyelements = document.querySelector(
+          "[data-theme ='bodylight']"
+        );
+        bodyelements.classList.remove("bodylightmode");
+        bodyelements.classList.add("bodydarkmode");
+        for (let element of elements) {
+          element.classList.remove("lightmode");
+          element.classList.add("darkmode");
+        }
+        btn.setAttribute("data-toggle", "dark");
+      } else if (btn.getAttribute("data-toggle") == "dark") {
+        const elements = document.querySelectorAll("[data-theme ='light']");
+        const bodyelements = document.querySelector(
+          "[data-theme ='bodylight']"
+        );
+        bodyelements.classList.remove("bodydarkmode");
+        bodyelements.classList.add("bodylightmode");
+        for (let element of elements) {
+          element.classList.remove("darkmode");
+          element.classList.add("lightmode");
+        }
+        btn.setAttribute("data-toggle", "light");
+      }
+    });
+  } else {
+    //country view page ↓↓↓
+
+    //Darkmode settings
+    const btn = document.getElementById("dark-light-mode");
+    btn.addEventListener("click", function () {
+      if (btn.getAttribute("data-toggle") == "light") {
+        const elements = document.querySelectorAll("[data-theme ='light']");
+        const bodyelements = document.querySelector(
+          "[data-theme ='bodylight']"
+        );
+        bodyelements.classList.remove("bodylightmode");
+        bodyelements.classList.add("bodydarkmode");
+        for (let element of elements) {
+          element.classList.remove("lightmode");
+          element.classList.add("darkmode");
+        }
+        const viewBackButton = document.querySelector(
+          "[data-theme = 'viewLight']"
+        );
+        const borderButton = document.querySelectorAll(".view-darkmode");
+        viewBackButton.classList.remove("countryViewButtonlight");
+        viewBackButton.classList.add("countryViewButtondark");
+        for (let border of borderButton) {
+          border.classList.remove("countryViewButtonlight");
+          border.classList.add("countryViewButtondark");
+        }
+        btn.setAttribute("data-toggle", "dark");
+      } else if (btn.getAttribute("data-toggle") == "dark") {
+        const elements = document.querySelectorAll("[data-theme ='light']");
+        const bodyelements = document.querySelector(
+          "[data-theme ='bodylight']"
+        );
+        bodyelements.classList.remove("bodydarkmode");
+        bodyelements.classList.add("bodylightmode");
+        for (let element of elements) {
+          element.classList.remove("darkmode");
+          element.classList.add("lightmode");
+        }
+        const viewBackButton = document.querySelector(
+          "[data-theme = 'viewLight']"
+        );
+        const borderButton = document.querySelectorAll(".view-darkmode");
+        viewBackButton.classList.remove("countryViewButtondark");
+        viewBackButton.classList.add("countryViewButtonlight");
+        for (let border of borderButton) {
+          border.classList.remove("countryViewButtondark");
+          border.classList.add("countryViewButtonlight");
+        }
+        btn.setAttribute("data-toggle", "light");
+      }
+    });
   }
 });
 
