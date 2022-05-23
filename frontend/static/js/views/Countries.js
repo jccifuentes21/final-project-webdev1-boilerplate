@@ -9,9 +9,9 @@ export default class extends AbstractView {
 
   async getHTML() {
     const cards1 = document.createElement("div");
-    console.log(countryArr.name);
     for (let i = 0; i <= countryArr.length - 1; i++) {
       const card = document.createElement("div");
+      // console.log(countryArr[i].name);
       const country = countryArr[i];
       card.innerHTML = `
       <div class="countries-part-cards" >

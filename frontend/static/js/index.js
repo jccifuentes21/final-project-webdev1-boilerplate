@@ -140,20 +140,22 @@ window.addEventListener("DOMContentLoaded", (event) => {
       for (let i = 0; i <= filteredCountries.length - 1; i++) {
         const card = document.createElement("div");
         const filteredcountry = filteredCountries[i];
+        console.log(filteredcountry);
         card.innerHTML = `
     <div class="countries-part-cards">
+    <a class="link-viewpages" href=/countries/${filteredcountry.cca3}>
     <div class="countries-image-parts">
-    <img src="${filteredcountry.flagURL}">
+    <img class="country-images" src="${filteredcountry.flagURL}">
     </div>
     <div>
-    <div class="countries-information-part">
-    <h2>${filteredcountry.name}</h2>
-    <p>Population: ${filteredcountry.population}</p>
-    <p class="filter-region">Region: ${filteredcountry.region}</p>
-    <p>Capital: ${filteredcountry.capital}</p>
+    <div class="countries-information-part lightmode" data-theme = "light">
+    <h2 class="information-part-h2">${filteredcountry.name}</h2>
+    <p class="information-part-p">Population: ${filteredcountry.population}</p>
+    <p class="filter-region class="information-part-p"">Region: ${filteredcountry.region}</p>
+    <p class="information-part-p">Capital: ${filteredcountry.capital}</p>
     </div>
-    <a class="link-viewpages" href=/countries/${filteredcountry.cca3}>Go to a view page →</a>
     </div>
+    </a>
     </div>
     `;
         containerhtml.appendChild(card);
@@ -162,14 +164,28 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     //Searching function with input
 
+    let text = document.getElementById("searching-input");
+    text.addEventListener("input", inputChange);
+
     function inputChange() {
       let searchinghtml = [];
       for (let i = 0; i <= countryArr.length - 1; i++) {
-        let name = countryArr[i].name;
-        for (let t = 0; t <= 20; t++) {
-          if (text.value === name[t]) {
-            searchinghtml.push(countryArr[i]);
-          }
+        let countryName = countryArr[i].name;
+        let data = [...countryName];
+        if (text.value == data[0]) {
+          searchinghtml.push(countryArr[i]);
+        }
+        if (text.value == data[0] + data[1]) {
+          searchinghtml.push(countryArr[i]);
+        }
+        if (text.value == data[0] + data[1] + data[2]) {
+          searchinghtml.push(countryArr[i]);
+        }
+        if (text.value == data[0] + data[1] + data[2] + data[3]) {
+          searchinghtml.push(countryArr[i]);
+        }
+        if (text.value == data[0] + data[1] + data[2] + data[3] + data[4]) {
+          searchinghtml.push(countryArr[i]);
         }
       }
       const containerhtml = document.querySelector(".container");
@@ -177,8 +193,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
       for (let i = 0; i <= searchinghtml.length - 1; i++) {
         const card = document.createElement("div");
         const searchingnames = searchinghtml[i];
+        console.log(searchingnames);
         card.innerHTML = `
-        <div class="countries-part-cards" >
+        <div class="countries-part-cards">
         <a class="link-viewpages" href=/countries/${searchingnames.cca3}>
         <div class="countries-image-parts">
         <img class="country-images" src="${searchingnames.flagURL}">
@@ -195,10 +212,35 @@ window.addEventListener("DOMContentLoaded", (event) => {
         </div>
     `;
         containerhtml.appendChild(card);
+
+        // const btn = document.getElementById("dark-light-mode");
+        // if (btn.getAttribute("data-toggle") == "light") {
+        //   const elements = document.querySelectorAll("[data-theme ='light']");
+        //   const bodyelements = document.querySelector(
+        //     "[data-theme ='bodylight']"
+        //   );
+        //   bodyelements.classList.remove("bodylightmode");
+        //   bodyelements.classList.add("bodydarkmode");
+        //   for (let element of elements) {
+        //     element.classList.remove("lightmode");
+        //     element.classList.add("darkmode");
+        //   }
+        //   btn.setAttribute("data-toggle", "dark");
+        // } else if (btn.getAttribute("data-toggle") == "dark") {
+        //   const elements = document.querySelectorAll("[data-theme ='light']");
+        //   const bodyelements = document.querySelector(
+        //     "[data-theme ='bodylight']"
+        //   );
+        //   bodyelements.classList.remove("bodydarkmode");
+        //   bodyelements.classList.add("bodylightmode");
+        //   for (let element of elements) {
+        //     element.classList.remove("darkmode");
+        //     element.classList.add("lightmode");
+        //   }
+        //   btn.setAttribute("data-toggle", "light");
+        // }
       }
     }
-    let text = document.getElementById("searching-input");
-    text.addEventListener("input", inputChange);
 
     // const inputText = document.getElementById("searching-input");
     // inputText.addEventListener(`keypress`, showUp);
@@ -233,40 +275,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // `;
     //       containerhtml.appendChild(card);
     //     }
-
-    //Show up the countries
-    window.onload = function showUp() {
-      let onloadhtml = [];
-      for (let i = 0; i <= countryArr.length - 1; i++) {
-        if (inputText.value === countryArr[i].name) {
-          onloadhtml.push(countryArr[i]);
-        }
-      }
-      const containerhtml = document.querySelector(".container");
-      containerhtml.innerHTML = "";
-      for (let i = 0; i <= onloadhtml.length - 1; i++) {
-        const card = document.createElement("div");
-        const onloadnames = onloadhtml[i];
-        card.innerHTML = `
-        <div class="countries-part-cards" >
-      <a class="link-viewpages" href=/countries/${onloadnames.cca3}>
-      <div class="countries-image-parts">
-      <img class="country-images" src="${onloadnames.flagURL}">
-      </div>
-      <div>
-      <div class="countries-information-part lightmode"  data-theme = "light">
-      <h2 class="information-part-h2">${onloadnames.name}</h2>
-      <p class="information-part-p">Population: ${onloadnames.population}</p>
-      <p class="filter-region information-part-p">Region: ${onloadnames.region}</p>
-      <p class="information-part-p">Capital: ${onloadnames.capital}</p>
-      </div>
-      </div>
-      </a>
-      </div>
-        `;
-        containerhtml.appendChild(card);
-      }
-    };
 
     //Darkmode settings
     const btn = document.getElementById("dark-light-mode");
