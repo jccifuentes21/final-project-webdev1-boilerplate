@@ -188,12 +188,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
           searchinghtml.push(countryArr[i]);
         }
       }
+
       const containerhtml = document.querySelector(".container");
       containerhtml.innerHTML = "";
+
       for (let i = 0; i <= searchinghtml.length - 1; i++) {
         const card = document.createElement("div");
         const searchingnames = searchinghtml[i];
-        console.log(searchingnames);
         card.innerHTML = `
         <div class="countries-part-cards">
         <a class="link-viewpages" href=/countries/${searchingnames.cca3}>
@@ -212,69 +213,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         </div>
     `;
         containerhtml.appendChild(card);
-
-        // const btn = document.getElementById("dark-light-mode");
-        // if (btn.getAttribute("data-toggle") == "light") {
-        //   const elements = document.querySelectorAll("[data-theme ='light']");
-        //   const bodyelements = document.querySelector(
-        //     "[data-theme ='bodylight']"
-        //   );
-        //   bodyelements.classList.remove("bodylightmode");
-        //   bodyelements.classList.add("bodydarkmode");
-        //   for (let element of elements) {
-        //     element.classList.remove("lightmode");
-        //     element.classList.add("darkmode");
-        //   }
-        //   btn.setAttribute("data-toggle", "dark");
-        // } else if (btn.getAttribute("data-toggle") == "dark") {
-        //   const elements = document.querySelectorAll("[data-theme ='light']");
-        //   const bodyelements = document.querySelector(
-        //     "[data-theme ='bodylight']"
-        //   );
-        //   bodyelements.classList.remove("bodydarkmode");
-        //   bodyelements.classList.add("bodylightmode");
-        //   for (let element of elements) {
-        //     element.classList.remove("darkmode");
-        //     element.classList.add("lightmode");
-        //   }
-        //   btn.setAttribute("data-toggle", "light");
-        // }
       }
     }
-
-    // const inputText = document.getElementById("searching-input");
-    // inputText.addEventListener(`keypress`, showUp);
-    // function showUp(e) {
-    //   let searchinghtml = [];
-    //   if (e.keyCode === 13) {
-    //     for (let i = 0; i <= countryArr.length - 1; i++) {
-    //       if (inputText.value === countryArr[i].name) {
-    //         searchinghtml.push(countryArr[i]);
-    //       }
-    //     }
-    //     const containerhtml = document.querySelector(".container");
-    //     containerhtml.innerHTML = "";
-    //     for (let i = 0; i <= searchinghtml.length - 1; i++) {
-    //       const card = document.createElement("div");
-    //       const searchingnames = searchinghtml[i];
-    //       card.innerHTML = `
-    // <div class="countries-part-cards">
-    // <div class="countries-image-parts">
-    // <img src="${searchingnames.flagURL}">
-    // </div>
-    // <div>
-    // <div class="countries-information-part">
-    // <h2>${searchingnames.name}</h2>
-    // <p>Population: ${searchingnames.population}</p>
-    // <p class="filter-region">Region: ${searchingnames.region}</p>
-    // <p>Capital: ${searchingnames.capital}</p>
-    // </div>
-    // <a class="link-viewpages" href=/countries/${searchingnames.cca3}>Go to a view page →</a>
-    // </div>
-    // </div>
-    // `;
-    //       containerhtml.appendChild(card);
-    //     }
 
     //Darkmode settings
     const btn = document.getElementById("dark-light-mode");
