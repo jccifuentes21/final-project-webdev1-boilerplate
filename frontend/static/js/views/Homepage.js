@@ -8,12 +8,12 @@ export default class extends AbstractView {
 
   async getHTML() {
     return `
-            <header>
-            <div class="header" id="header">
-            <h1>Where in the world?</h1>
-            <div class="header-btn" id="dark-light-mode" data-toggle="light">
+    <header>
+            <div class="header lightmode" id="header" data-theme = "light">
+            <h1 class="header-title"><a class="link-home lightmode" href=http://localhost:8081/ data-theme = "light">Where in the world?</a></h1>
+            <div class="header-btn" id="dark-light-mode" data-toggle = "light">
             <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
-            <span id="span">Dark Mode</sapn>
+            <span classs="header-darkmode" id="span">Dark Mode</sapn>
             </div>
             </div>
         </header>

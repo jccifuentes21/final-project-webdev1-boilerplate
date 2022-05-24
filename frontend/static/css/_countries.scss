@@ -6,26 +6,41 @@
   }
 
   body {
-    background-color: #fafafa;
-        color: #111517;
         font-family: 'Nunito Sans', sans-serif;
   }
 
-// body.light-mode {
-//     background-color: #fafafa;
-//     color: #111517;
-//     font-family: 'Nunito Sans', sans-serif;
-// }
-// body.dark-mode {
-//     background-color: #202c37;
-//     color: #ffffff;
-//     font-family: 'Nunito Sans', sans-serif;
-// }
-  
-//   body{
-//     color: #111517;
-//     font-family: 'Nunito Sans', sans-serif;
-//   }
+//Dark-mode settings
+.countryViewButtonlight {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0.75px #00000080;
+    color: #111517;
+}
+
+.countryViewButtondark {
+    background-color: #2b3945;
+    box-shadow: 0px 0px 10px 0.75px #00000080;
+    color: #ffffff;
+}
+
+.bodylightmode {
+    background-color: #fafafa;
+    color: #111517;
+}
+
+.bodydarkmode {
+    background-color: #202c37;
+    color: #ffffff;
+}
+
+.lightmode {
+    background-color: #ffffff;
+    color: #111517;
+}
+
+.darkmode {
+    background-color: #2b3945;
+    color: #ffffff;
+}
 
 //Searching part style settings
 
@@ -36,15 +51,9 @@
     width: 100vw;
     padding-left: 1rem;
     height: 4.5rem;
-    background-color: #ffffff;
-    
-
-    h1 {
+    .header-title {
       font-size: 0.8rem;
       font-weight: 800;
-      .link-home {
-          color: #111517;
-      }
     }
 
     .header-btn {
@@ -72,7 +81,6 @@
             width: 90%;
             margin: 5% 5% 0% 5%;
             padding: 1% 0% 1% 20%;
-            background-color: #ffffff;
             height: 3em;
             border-radius: 5px;
         }
@@ -84,7 +92,6 @@
         height: 3.5em;
         border-radius: 5px;
         border: none;
-        background-color: #ffffff;
         .searching-part-slc-op {
             border-radius: 5px;
             border: none;
@@ -92,22 +99,23 @@
     }
     }
 
-    @media screen and (min-width: 376px) and (max-width: 1440px) {
+    @media screen and (min-width: 376px) {
         .header {
             display: flex;
             justify-content: space-between;
             width: 100%;
             height: 4rem;
-        
-            h1 {
-              padding-left: 1%;
-              font-size: 1.5rem;
-              font-weight: 800;
-            }
+
+            .header-title {
+                font-size: 1.5rem;
+                font-weight: 800;
+              }
         
             .header-btn {
-                margin-right: 5%;
-                cursor: pointer;
+              padding-left: 1%;
+              font-size: 1rem;
+              margin-right: 5%;
+              cursor: pointer;
             }
           }
         .searching-part {
@@ -151,7 +159,7 @@
             height: 45%;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
-            img{
+            .country-images{
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 width: 100%;
@@ -159,23 +167,23 @@
             }
         }
         .countries-information-part {
-            background-color: #ffffff;
+            // background-color: #ffffff;
             height: 55%;
             padding: 0% 10%;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            h2 {
+            .information-part-h2 {
                 padding: 10% 0%;
                 font-size: 18px;
             }
-            p {
+            .information-part-p {
                 padding-bottom: 5%;
                 font-size: 14px;
             }
             
         }
         .link-viewpages {
-            margin-left:40%;
+            text-decoration: none;
         }
     }
 }
@@ -184,7 +192,7 @@
     cursor: pointer;
 }
 
-@media screen and (min-width: 376px) and (max-width: 1440px) {
+@media screen and (min-width: 376px) {
     .container {
         display: grid;
         grid-template-columns: repeat(4, 20.5%);
@@ -197,7 +205,7 @@
             margin: 0%;
             .countries-image-parts {
                 height: 45%;
-                img {
+                .country-images {
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 height: 100%;
@@ -209,10 +217,10 @@
                 padding: 0% 10%;
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
-                h2 {
+                .information-part-h2 {
                     padding: 10% 0%;
                 }
-                p {
+                .information-part-p {
                     padding-bottom: 3%;
                 }
             }

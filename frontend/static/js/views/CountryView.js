@@ -26,6 +26,8 @@ export default class extends AbstractView {
       borderButton.innerHTML = borderCountry.name;
       borderButton.setAttribute("href", borderCountry.cca3);
       borderButton.className = "border-country-button";
+      borderButton.classList.add("view-darkmode");
+      borderButton.classList.add("countryViewButtonlight");
 
       borderCountriesContainer.appendChild(borderButton);
     });
@@ -34,6 +36,7 @@ export default class extends AbstractView {
 
     return `
     <header>
+<<<<<<< HEAD
       <div class="header" id="header">
       <h1><a class="link-viewpages" href="/" >Where in the world?</a></h1>
       <div class="header-btn" id="dark-light-mode" data-toggle="light">
@@ -42,9 +45,19 @@ export default class extends AbstractView {
       </div>
       </div>
     </header>
+=======
+            <div class="header lightmode" id="header" data-theme = "light">
+            <h1 class="header-title"><a class="link-home lightmode" href=http://localhost:8081/ data-theme = "light">Where in the world?</a></h1>
+            <div class="header-btn" id="dark-light-mode" data-toggle = "light">
+            <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
+            <span classs="header-darkmode" id="span">Dark Mode</sapn>
+            </div>
+            </div>
+        </header>
+>>>>>>> 5572b8a94ddaed5e14277231c18870d365f027af
     
         <div class="content">
-            <a href="/countries" class="back-button"><span class="fa fa-arrow-left"></span>&nbsp;&nbsp;Back</a>
+            <a href="/countries" class="back-button countryViewButtonlight" data-theme = "viewLight"><span class="fa fa-arrow-left"></span>&nbsp;&nbsp;Back</a>
             <div class="country-data-container">
                 <div class="country-flag">
                     <img src="${currentCountry.flagURL}" alt="">
