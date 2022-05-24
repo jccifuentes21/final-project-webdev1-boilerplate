@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  // background-color: #202c37;
+  background-color: var(--body-background-color);
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+
+
 @media screen and (max-width: 376px) {
   body {
     display: flex;
@@ -11,11 +25,13 @@
     width: 100vw;
     padding-left: 1rem;
     height: 4.5rem;
+    background-color: var(--element-background-color);
 
     a {
       text-decoration: none;
       font-size: 0.8rem;
       font-weight: 800;
+      color: var(--text-color);
     }
 
     button {
@@ -42,9 +58,10 @@
     }
     .back-button {
       font-size: 0.85rem;
-      background-color: #ffffff;
+      background-color: var(--element-background-color);
       width: fit-content;
       text-decoration: none;
+      color: var(--text-color);
       font-weight: 300;
       padding: 0.25rem 1.75rem;
       margin: 2rem 1rem;
@@ -55,10 +72,12 @@
 
     #country-name {
       font-weight: 800;
+      color: var(--text-color);
       margin: 0.5rem 1rem;
     }
 
     .placeholder {
+      color: var(--text-color);
       font-weight: 600;
       font-size: 0.9rem;
       margin: 0.5rem 1rem;
@@ -73,6 +92,7 @@
       margin: 0.5rem 1rem;
       font-weight: 600;
       font-size: 1rem;
+      color: var(--text-color);
     }
 
     .border-countries {
@@ -82,7 +102,8 @@
 
       .border-country-button {
         text-decoration: none;
-        background-color: #ffffff;
+        background-color: var(--element-background-color);
+        color: var(--text-color);
         padding: 0.25rem 1.25rem;
         margin: 0.5rem 0.75rem;
         box-shadow: 0px 0px 10px 0.75px #00000080;
@@ -101,11 +122,13 @@
     padding-left: 4rem;
     height: 5rem;
     width: 100vw;
+    background-color: var(--element-background-color);
 
     a {
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: 800;
+      color: var(--text-color);
     }
 
     button {
@@ -119,8 +142,9 @@
     .back-button {
       display: inline-block;
       padding: 0.5rem 2rem;
-      background-color: #ffffff;
+      background-color: var(--element-background-color);
       text-decoration: none;
+      color: var(--text-color);
       width: fit-content;
       margin: 2.5rem 0;
       box-shadow: 0px 0px 10px 0.75px #00000080;
@@ -158,10 +182,12 @@
 
         #country-name {
           font-weight: 800;
+          color: var(--text-color);
           margin: 0.5rem 1rem;
         }
 
         .placeholder {
+          color: var(--text-color);
           font-weight: 600;
           font-size: 0.9rem;
           margin: 0.5rem 1rem;
@@ -184,6 +210,7 @@
         margin: 3rem 1rem 0.5rem 1rem;
         font-weight: 600;
         font-size: 1rem;
+        color: var(--text-color);
       }
 
       .border-countries {
@@ -193,7 +220,8 @@
 
         .border-country-button {
           text-decoration: none;
-          background-color: #ffffff;
+          background-color: var(--element-background-color);
+          color: var(--text-color);
           padding: 0.25rem 1.25rem;
           margin: 0.5rem 0.75rem;
           box-shadow: 0px 0px 10px 0.75px #00000080;

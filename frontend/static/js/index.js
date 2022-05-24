@@ -2,6 +2,14 @@ import { getCountries } from "./countries.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
+  
+
+  const body =  document.querySelector('body')
+  body.style.setProperty('--body-background-color', '#202c37' )
+  body.style.setProperty('--element-background-color', '#2b3945' )
+  body.style.setProperty('--text-color', '#fff' )
+
+
 
   const brazil = {
     backgroundImage: "static/css/homepage/brazil.jpg",
@@ -100,39 +108,48 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const inputColor = document.getElementById("searching-input");
   const selectColor = document.getElementById("select");
 
-  btn.addEventListener("click", function () {
-    if (btn.getAttribute("data-toggle") == "light") {
-      document.body.style.backgroundColor = "#202c37";
-      document.body.style.color = "#ffffff";
-      headerColor.style.backgroundColor = "#2b3945";
-      inputColor.style.backgroundColor = "#2b3945";
-      selectColor.style.backgroundColor = "#2b3945";
-      selectColor.style.color = "#ffffff";
-      for (let i = 0; i <= countryArr.length - 1; i++) {
-        divInfoColor.style.backgroundColor = "#2b3945";
-      }
-      // localStorage.setItem("dark-mode-settings", "dark");
-      btn.setAttribute("data-toggle", "dark");
-    } else {
-      document.body.style.backgroundColor = "#fafafa";
-      document.body.style.color = "#111517";
-      headerColor.style.backgroundColor = "#ffffff";
-      inputColor.style.backgroundColor = "#ffffff";
-      selectColor.style.backgroundColor = "#ffffff";
-      selectColor.style.color = "#111517";
-      for (let i = 0; i <= countryArr.length - 1; i++) {
-        divInfoColor.style.backgroundColor = "#ffffff";
-      }
-      //     localStorage.setItem("dark-mode-settings", "light");
-      btn.setAttribute("data-toggle", "light");
-      //     if (localStorage.getItem("dark-mode-settings") === "dark") {
-      //       document.body.style.backgroundColor = "#202c37";
-      //       btn.checked = true;
-      //     } else if (localStorage.getItem("dark-mode-settings") === "light") {
-      //       document.body.style.backgroundColor = "#fafafa";
-      //     }
-    }
-  });
+
+  btn.addEventListener("click", () =>{
+    body.style.setProperty('--body-background-color', 'hsl(0, 0%, 98%)' )
+    body.style.setProperty('--element-background-color', 'hsl(0, 0%, 100%)' )
+    body.style.setProperty('--text-color', 'hsl(200, 15%, 8%)' )
+
+  })
+
+
+  // btn.addEventListener("click", function () {
+  //   if (btn.getAttribute("data-toggle") == "light") {
+  //     document.body.style.backgroundColor = "#202c37";
+  //     document.body.style.color = "#ffffff";
+  //     headerColor.style.backgroundColor = "#2b3945";
+  //     inputColor.style.backgroundColor = "#2b3945";
+  //     selectColor.style.backgroundColor = "#2b3945";
+  //     selectColor.style.color = "#ffffff";
+  //     for (let i = 0; i <= countryArr.length - 1; i++) {
+  //       divInfoColor.style.backgroundColor = "#2b3945";
+  //     }
+  //     // localStorage.setItem("dark-mode-settings", "dark");
+  //     btn.setAttribute("data-toggle", "dark");
+  //   } else {
+  //     document.body.style.backgroundColor = "#fafafa";
+  //     document.body.style.color = "#111517";
+  //     headerColor.style.backgroundColor = "#ffffff";
+  //     inputColor.style.backgroundColor = "#ffffff";
+  //     selectColor.style.backgroundColor = "#ffffff";
+  //     selectColor.style.color = "#111517";
+  //     for (let i = 0; i <= countryArr.length - 1; i++) {
+  //       divInfoColor.style.backgroundColor = "#ffffff";
+  //     }
+  //     //     localStorage.setItem("dark-mode-settings", "light");
+  //     btn.setAttribute("data-toggle", "light");
+  //     //     if (localStorage.getItem("dark-mode-settings") === "dark") {
+  //     //       document.body.style.backgroundColor = "#202c37";
+  //     //       btn.checked = true;
+  //     //     } else if (localStorage.getItem("dark-mode-settings") === "light") {
+  //     //       document.body.style.backgroundColor = "#fafafa";
+  //     //     }
+  //   }
+  // });
 
   // const btn = document.querySelector(".header-btn[data-mode]");
   // const body = document.querySelector("body");

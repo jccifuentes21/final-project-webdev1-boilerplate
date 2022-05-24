@@ -34,14 +34,14 @@ export default class extends AbstractView {
 
     return `
     <header>
-    <div class="header" id="header">
-    <h1><a class="link-viewpages" href=http://localhost:8081/>Where in the world?</a></h1>
-    <div class="header-btn" id="dark-light-mode" data-toggle="light">
-    <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
-    <span id="span">Dark Mode</sapn>
-    </div>
-    </div>
-</header>
+      <div class="header" id="header">
+      <h1><a class="link-viewpages" href="/" >Where in the world?</a></h1>
+      <div class="header-btn" id="dark-light-mode" data-toggle="light">
+      <span class="iconify" data-icon="bi:moon-fill" style="color: #ccc; font-size: 17px;"></span>
+      <span id="span">Dark Mode</sapn>
+      </div>
+      </div>
+    </header>
     
         <div class="content">
             <a href="/countries" class="back-button"><span class="fa fa-arrow-left"></span>&nbsp;&nbsp;Back</a>
